@@ -22,9 +22,6 @@ export const API_URL = `${CLEAN_API_ROOT}/api`;
 
 const api = axios.create({
   baseURL: API_URL,
-  headers: {
-    "Content-Type": "application/json",
-  },
   timeout: 30000,
 });
 
@@ -36,11 +33,34 @@ api.interceptors.request.use(
       config.headers.Authorization = `Bearer ${token}`;
     }
 
+    const isFormData =
+      typeof FormData !== "undefined" && config.data instanceof FormData;
+
+    if (isFormData) {
+      if (typeof config.headers?.delete === "function") {
+        config.headers.delete("Content-Type");
+        config.headers.delete("content-type");
+      } else if (config.headers) {
+        delete config.headers["Content-Type"];
+        delete config.headers["content-type"];
+      }
+    } else if (config.data) {
+      if (typeof config.headers?.set === "function") {
+        if (!config.headers.get("Content-Type")) {
+          config.headers.set("Content-Type", "application/json");
+        }
+      } else if (
+        config.headers &&
+        !config.headers["Content-Type"] &&
+        !config.headers["content-type"]
+      ) {
+        config.headers["Content-Type"] = "application/json";
+      }
+    }
+
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
 api.interceptors.response.use(
