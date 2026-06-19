@@ -1,0 +1,805 @@
+
+
+/* ---------- Base responsive reset ---------- */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+img,
+svg,
+canvas,
+video {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
+  font-size: 16px;
+}
+
+/* Mobile browsers me input focus par zoom stop */
+input,
+select,
+textarea {
+  font-size: 16px !important;
+}
+
+/* ---------- Toast mobile fix ---------- */
+.Toastify__toast-container {
+  width: auto;
+  max-width: min(92vw, 420px);
+  right: 12px;
+  left: auto;
+}
+
+.Toastify__toast {
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+/* =========================================================
+   AUTH PAGES: Login / Signup / Forgot Password
+   ========================================================= */
+
+.auth-layout {
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+.auth-main {
+  min-height: 100dvh;
+  padding: 18px 12px !important;
+  display: grid;
+  place-items: center;
+}
+
+.auth-card {
+  width: min(100%, 420px) !important;
+  max-width: 420px !important;
+  border-radius: 18px !important;
+  padding: 26px 24px 24px !important;
+}
+
+.auth-logo {
+  max-height: 76px;
+  height: auto !important;
+  object-fit: contain;
+}
+
+.auth-title {
+  font-size: clamp(22px, 6vw, 30px) !important;
+  line-height: 1.15;
+}
+
+.auth-subtitle {
+  font-size: clamp(12px, 3.5vw, 14px) !important;
+}
+
+.auth-form {
+  width: 100%;
+}
+
+.input-wrap {
+  width: 100%;
+  min-height: 46px;
+}
+
+.input-wrap input {
+  min-width: 0;
+}
+
+.auth-row {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.auth-button {
+  min-height: 48px;
+}
+
+.auth-center,
+.auth-small {
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .auth-main {
+    padding: 12px !important;
+    align-items: center;
+  }
+
+  .auth-card {
+    max-width: calc(100vw - 24px) !important;
+    padding: 22px 16px 20px !important;
+  }
+
+  .auth-logo {
+    max-height: 58px;
+    margin-bottom: 8px !important;
+  }
+
+  .auth-form {
+    gap: 12px !important;
+  }
+
+  .auth-row {
+    gap: 8px;
+    align-items: center;
+  }
+
+  .remember,
+  .auth-check,
+  .auth-link,
+  .auth-small {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .auth-card {
+    padding: 18px 12px !important;
+  }
+
+  .auth-title {
+    font-size: 22px !important;
+  }
+
+  .input-wrap {
+    padding: 0 10px !important;
+  }
+}
+
+/* =========================================================
+   ERP LAYOUT: Header / Sidebar / Main
+   ========================================================= */
+
+.erp-shell {
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+.erp-header {
+  width: 100%;
+  min-height: 62px;
+}
+
+.erp-title {
+  min-width: 0;
+}
+
+.erp-main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.erp-sidebar {
+  max-width: 86vw;
+}
+
+.overlay {
+  backdrop-filter: blur(1px);
+}
+
+.profile-chip {
+  min-width: 0;
+}
+
+.profile-chip,
+.erp-user button {
+  white-space: nowrap;
+}
+
+/* Header tablet */
+@media (max-width: 900px) {
+  .erp-header {
+    padding: 8px 12px !important;
+    gap: 8px;
+  }
+
+  .burger-btn {
+    flex: 0 0 auto;
+    font-size: 26px !important;
+  }
+
+  .erp-title {
+    flex: 1;
+    font-size: 13px !important;
+    line-height: 1.2;
+    letter-spacing: 0.3px !important;
+    text-align: center;
+  }
+
+  .erp-user {
+    gap: 6px !important;
+    flex: 0 0 auto;
+  }
+
+  .erp-user button {
+    padding: 8px 9px !important;
+    font-size: 12px !important;
+  }
+
+  .erp-user .profile-chip {
+    max-width: 120px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .erp-main {
+    padding: 12px !important;
+  }
+}
+
+/* Header mobile */
+@media (max-width: 600px) {
+  .erp-header {
+    min-height: auto !important;
+    display: grid !important;
+    grid-template-columns: 40px 1fr auto;
+    align-items: center;
+    padding: 8px 10px !important;
+  }
+
+  .erp-title {
+    font-size: 11px !important;
+    line-height: 1.15;
+  }
+
+  .erp-user {
+    max-width: 120px;
+    justify-content: flex-end;
+  }
+
+  .erp-user .profile-chip {
+    max-width: 90px !important;
+    padding: 7px 8px !important;
+  }
+
+  .erp-user button:last-child {
+    padding: 7px 8px !important;
+  }
+
+  .erp-user button:last-child svg {
+    margin: 0;
+  }
+
+  .erp-user button:last-child {
+    font-size: 0 !important;
+  }
+
+  .erp-user button:last-child svg {
+    font-size: 16px;
+  }
+
+  .erp-sidebar {
+    width: min(320px, 88vw) !important;
+    left: -90vw;
+  }
+
+  .erp-main {
+    padding: 10px !important;
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 380px) {
+  .erp-title {
+    font-size: 10px !important;
+  }
+
+  .erp-user {
+    max-width: 100px;
+  }
+
+  .erp-user .profile-chip {
+    max-width: 74px !important;
+  }
+}
+
+/* =========================================================
+   PROFILE MODAL
+   ========================================================= */
+
+.profile-modal-backdrop {
+  padding: 10px !important;
+}
+
+.profile-modal {
+  width: min(760px, 96vw) !important;
+  max-height: 92dvh !important;
+  border-radius: 18px !important;
+  padding: 16px !important;
+}
+
+.profile-form {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 760px) {
+  .profile-modal {
+    width: 96vw !important;
+    padding: 14px !important;
+  }
+
+  .profile-modal-head {
+    gap: 10px;
+  }
+
+  .profile-modal-head h2 {
+    font-size: 20px;
+  }
+
+  .profile-modal-head p {
+    font-size: 12px;
+    word-break: break-word;
+  }
+
+  .profile-form {
+    grid-template-columns: 1fr !important;
+  }
+
+  .primary-btn,
+  .dark-btn {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   TOOLBAR / SEARCH / BUTTONS
+   ========================================================= */
+
+.page-toolbar,
+.toolbar-actions,
+.list-actions-row,
+.admin-form-actions {
+  max-width: 100%;
+}
+
+.toolbar-actions {
+  flex-wrap: wrap;
+}
+
+.toolbar-actions button,
+.list-actions-row button,
+.admin-form-actions button,
+.auth-button,
+.primary-btn,
+.dark-btn {
+  touch-action: manipulation;
+}
+
+.search-box {
+  max-width: 100%;
+}
+
+.search-box input {
+  min-width: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .page-toolbar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .toolbar-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px !important;
+  }
+
+  .toolbar-actions button,
+  .toolbar-actions label,
+  .search-box {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .toolbar-actions {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================
+   TABLES: Inventory / Transactions / Excel Pages
+   ========================================================= */
+
+.table-wrap,
+.excel-table-wrap,
+.machine-table-wrap,
+.admin-table-wrap,
+.dash-table,
+.excel-panel {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.erp-table,
+.excel-like-table,
+.machine-table,
+.admin-table,
+.excel-small-table {
+  max-width: none;
+}
+
+.erp-table th,
+.erp-table td,
+.excel-like-table th,
+.excel-like-table td,
+.machine-table th,
+.machine-table td,
+.admin-table th,
+.admin-table td {
+  line-height: 1.35;
+}
+
+.action-cell {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.action-cell button {
+  min-height: 34px;
+}
+
+/* Mobile table readable */
+@media (max-width: 768px) {
+  .table-wrap {
+    max-height: calc(100dvh - 180px) !important;
+    border-radius: 12px !important;
+  }
+
+  .excel-table-wrap {
+    max-height: calc(100dvh - 250px) !important;
+  }
+
+  .machine-table-wrap {
+    max-height: calc(100dvh - 190px) !important;
+  }
+
+  .erp-table th,
+  .erp-table td,
+  .excel-like-table th,
+  .excel-like-table td,
+  .machine-table th,
+  .machine-table td,
+  .admin-table th,
+  .admin-table td {
+    font-size: 11px !important;
+    padding: 7px !important;
+  }
+
+  .erp-table input,
+  .erp-table select,
+  .excel-like-table input,
+  .admin-table input,
+  .admin-table select {
+    padding: 8px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* =========================================================
+   EXCEL SECTION PAGES
+   ========================================================= */
+
+.sheet-card {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.sheet-title-band {
+  font-size: clamp(14px, 4vw, 18px) !important;
+  line-height: 1.25;
+  padding: 12px !important;
+}
+
+.sheet-group-band {
+  font-size: clamp(12px, 3.5vw, 15px) !important;
+}
+
+.sheet-meta-row {
+  gap: 6px !important;
+}
+
+@media (max-width: 600px) {
+  .sheet-meta-row {
+    flex-direction: column;
+    align-items: stretch;
+    font-size: 11px !important;
+  }
+}
+
+/* =========================================================
+   DASHBOARDS
+   ========================================================= */
+
+.dashboard-page,
+.excel-dashboard,
+.machine-excel {
+  width: 100%;
+  max-width: 100%;
+}
+
+.excel-title-block {
+  padding: 14px !important;
+  border-radius: 14px !important;
+}
+
+.excel-title-block h1 {
+  font-size: clamp(17px, 5vw, 28px) !important;
+}
+
+.excel-title-block h2 {
+  font-size: clamp(13px, 4vw, 18px) !important;
+}
+
+.excel-kpi-grid,
+.machine-summary-cards,
+.cards {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)) !important;
+}
+
+.two-col {
+  grid-template-columns: 1fr !important;
+}
+
+.kpi-box,
+.dash-card,
+.excel-panel,
+.month-card {
+  border-radius: 14px !important;
+}
+
+.kpi-box b {
+  font-size: clamp(20px, 6vw, 26px) !important;
+}
+
+.month-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+}
+
+@media (max-width: 520px) {
+  .excel-kpi-grid,
+  .machine-summary-cards,
+  .cards,
+  .month-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .excel-panel {
+    padding: 12px !important;
+  }
+
+  .excel-panel h3 {
+    font-size: 13px !important;
+  }
+
+  .bar-row {
+    grid-template-columns: 54px 1fr 58px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* =========================================================
+   ADMIN PANEL
+   ========================================================= */
+
+.admin-panel,
+.lists-page,
+.erp-page,
+.excel-section-page {
+  width: 100%;
+  max-width: 100%;
+}
+
+.admin-head,
+.lists-head {
+  gap: 10px !important;
+}
+
+.admin-head input,
+.lists-head input {
+  width: 100%;
+}
+
+.admin-form,
+.admin-card,
+.list-add,
+.list-card {
+  max-width: 100%;
+}
+
+@media (max-width: 800px) {
+  .admin-head,
+  .lists-head,
+  .list-add {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .admin-form {
+    grid-template-columns: 1fr !important;
+    padding: 14px !important;
+  }
+
+  .admin-card {
+    padding: 14px !important;
+  }
+
+  .admin-form-actions {
+    flex-direction: column;
+  }
+
+  .admin-form-actions button {
+    width: 100%;
+  }
+
+  .list-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .list-actions-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .list-actions-row button {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 430px) {
+  .list-actions-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================
+   LISTS PAGE
+   ========================================================= */
+
+.list-card h3 {
+  gap: 10px;
+}
+
+.list-card p {
+  align-items: flex-start;
+}
+
+.list-card em {
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .list-card {
+    padding: 12px !important;
+  }
+
+  .list-card p {
+    flex-direction: column;
+  }
+
+  .list-card em {
+    width: 100%;
+  }
+
+  .list-card button {
+    flex: 1;
+    min-height: 34px;
+  }
+}
+
+/* =========================================================
+   FLOAT SCROLL BUTTONS
+   ========================================================= */
+
+.scroll-float-tools {
+  right: 14px !important;
+  bottom: 16px !important;
+}
+
+.scroll-float-tools button {
+  width: 44px !important;
+  height: 44px !important;
+}
+
+@media (max-width: 600px) {
+  .scroll-float-tools {
+    right: 10px !important;
+    bottom: 10px !important;
+  }
+
+  .scroll-float-tools button {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 18px !important;
+  }
+}
+
+/* =========================================================
+   OLD HEADER / SIDEBAR COMPONENT SUPPORT
+   If old Header component appears anywhere
+   ========================================================= */
+
+.topbar {
+  max-width: 100%;
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    height: auto !important;
+    min-height: 56px;
+    padding: 8px 10px !important;
+    gap: 8px;
+  }
+
+  .topbar .title {
+    font-size: 12px !important;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .user-area {
+    gap: 6px !important;
+  }
+
+  .username {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .logout {
+    padding: 7px 9px !important;
+    font-size: 12px !important;
+  }
+
+  .sidebar,
+  .sidebar.active {
+    max-width: 88vw;
+  }
+}
+
+/* =========================================================
+   Utility classes
+   ========================================================= */
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
